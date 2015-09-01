@@ -139,7 +139,9 @@ int main (int argc, char* argv[]) {
 					fprintf(stderr, "Cannot build edge from %d-%d. Cannot find related nodes. Please check your GML file %s\n", src, dst, argv[1]);
 					exit(5);
 				    }
+				/* every edge is defined as bidirectional */
 				matrix[index1][index2] = 1;
+				matrix[index2][index1] = 1;
 				edge_count++;
 			    }
 			elements = elements->next;
